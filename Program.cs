@@ -46,6 +46,21 @@ namespace Employees
                 }
             }
         }
+
+        public static int feladat6()
+        {
+            int count = 0;
+
+            foreach (var item in employers)
+            {
+                if (item.Salary > 50000)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
         static void Main(string[] args)
         {
             StreamReader sr = new StreamReader("tulajdonsagok_100sor.txt");
@@ -59,6 +74,7 @@ namespace Employees
             feladat3();
             feladat4();
             feladat5();
+            Console.WriteLine($"Összesen {feladat6()} keresnek többet mint 50000 ft.");
         }
     }
 }
