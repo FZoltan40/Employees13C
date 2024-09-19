@@ -16,6 +16,24 @@ namespace Employees
                 Console.WriteLine(item.Name);
             }
         }
+
+        public static void feladat4()
+        {
+            int max = employers[0].Salary;
+            int id = 0;
+
+            foreach (var item in employers)
+            {
+                if (item.Salary > max)
+                {
+                    max = item.Salary;
+                    id = item.Id;
+                }
+            }
+
+            Console.WriteLine($"A legjobban kereső dogozó Id: {id}, Neve: {employers[id - 1].Name}");
+
+        }
         static void Main(string[] args)
         {
             StreamReader sr = new StreamReader("tulajdonsagok_100sor.txt");
@@ -27,6 +45,7 @@ namespace Employees
             }
 
             feladat3();
+            feladat4();
         }
     }
 }
