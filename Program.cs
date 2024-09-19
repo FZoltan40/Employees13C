@@ -7,6 +7,15 @@ namespace Employees
     internal class Program
     {
         public static List<Employer> employers = new List<Employer>();
+
+        public static void feladat3()
+        {
+            Console.WriteLine("Az összes dolgozó neve: ");
+            foreach (var item in employers)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
         static void Main(string[] args)
         {
             StreamReader sr = new StreamReader("tulajdonsagok_100sor.txt");
@@ -17,7 +26,7 @@ namespace Employees
                 employers.Add(emp);
             }
 
-            Console.WriteLine(employers.Count);
+            feladat3();
         }
     }
 }
